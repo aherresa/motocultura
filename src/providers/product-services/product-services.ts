@@ -14,13 +14,13 @@ export class ProductServicesProvider {
   }
 
   public newProduct(token,postParams){
-    let body='name='+postParams.name+'&picture='+postParams.picture+'&price='+postParams.price+'&category='+postParams.category+'&description='+postParams.description;
+    let body='nombre='+postParams.nombre+'&descripcion='+postParams.descripcion;
     let optionspost = new RequestOptions({
       headers: this.headersPost
     })
 
     return new Promise ((resolve, reject)=>{
-      this.http.post('https://api-rest-edward.herokuapp.com/api/product',body,optionspost)
+      this.http.post('https://api-rest-edward.herokuapp.com/api/norm',body,optionspost)
       .subscribe(res=>{
         resolve(res);
       },(err)=>{
@@ -41,7 +41,7 @@ export class ProductServicesProvider {
     })
 
     return new Promise ((resolve, reject)=>{
-      this.http.post('https://api-rest-example-felipeh.herokuapp.com/api/signin',optionspost)
+      this.http.post('https://api-rest-edward.herokuapp.com/api/norm',optionspost)
       .subscribe(res=>{
         resolve(res);
       },(err)=>{
@@ -62,7 +62,7 @@ export class ProductServicesProvider {
     })
 
     return new Promise ((resolve, reject)=>{
-      this.http.delete('https://api-rest-example-felipeh.herokuapp.com/api/product'+id,optionspost)
+      this.http.delete('https://api-rest-edward.herokuapp.com/api/norm'+id,optionspost)
       .subscribe(res=>{
         resolve(res);
       },(err)=>{
